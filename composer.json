@@ -1,0 +1,9 @@
+{
+    "name": "developer314/freeman",
+    "extra": {
+        "statamic": {
+            "name": "Freeman",
+            "description": "Freeman starter kit"
+        }
+    }
+}

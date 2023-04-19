@@ -1,0 +1,61 @@
+title: 'Site Header'
+data:
+  logo: logo.png
+  navigation: |-
+    <ul class="navpage__wrap">
+                                <li class="navpage__list"><a href="#sectionhero" class="activelink">Intro.</a></li>
+                                <li class="navpage__list"><a href="#aboutsection">About Me.</a></li>
+                                <li class="navpage__list"><a href="#servicesection">Service.</a></li>
+                                <li class="navpage__list"><a href="#portfoliosection">Portfolio.</a></li>
+                                <li class="navpage__list"><a href="#contactsection">Contact.</a></li>
+                            </ul>
+  mobile_nav: |-
+    <ul class="overlay__listnav">
+                    <li class="navpage__list"><a href="#herosection">Intro.</a></li>
+                    <li><a href="#aboutsection">About Me.</a></li>
+                    <li><a href="#servicesection">Services.</a></li>
+                    <li><a href="#portfoliosection">Portfolio.</a></li>
+                    <li><a href="#contactsection">Contact.</a></li>
+                </ul>
+  preloader_image: logo.png
+  template: |-
+    <!-- header -->
+        <header id="headermain">
+            <div class="container">
+                <div class="row headerwrap">
+                    <div class="col-xs-12 col-md-12 col-lg-2">
+                        <!-- wrap logo -->
+                        <div class="headerwrap__logo">
+                            <img src="{{site_header:logo}}" alt="logo" class="img-fluid" />
+                        </div>
+                        <!-- end wrap logo -->
+                        <!-- navigation icon  -->
+                        <div class="navicon d-block d-lg-none">
+                            <div class="navicon__bar"></div>
+                        </div>
+                        <!-- end navigation icon  -->
+                    </div>
+                    <div class="col-lg-10 text-xl-left d-none d-lg-block justify-content-lg-left justify-content-xl-left">
+                        <!-- navigation desktop -->
+                        <nav class="navpage text-left">
+                            {{site_header:navigation}}
+                        </nav>
+                        <!-- end navigation desktop -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end header -->
+        <!-- mobile nav -->
+        <div class="overlay">
+            <div class="overlay__navigation">
+                {{site_header:mobile_nav}}
+            </div>
+        </div>
+        <!-- end mobile nav -->
+        <!-- PRELOADER -->
+        <div class="preloader">
+            <div class="preloader__img">
+                <img src="{{site_header:preloader_image}}" alt="logopage" class="img-fluid" />
+            </div>
+        </div>

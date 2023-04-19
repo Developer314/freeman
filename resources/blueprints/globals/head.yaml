@@ -1,0 +1,68 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        import: seo
+      -
+        handle: body_bg_color
+        field:
+          theme: classic
+          lock_opacity: false
+          default_color_mode: HEXA
+          color_modes:
+            - hex
+          display: 'Base Color'
+          type: color
+          icon: color
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+  template:
+    display: Template
+    fields:
+      -
+        handle: template
+        field:
+          antlers: true
+          default: |-
+            {{if meta_title}}
+                    <title>{{ meta_title }}</title> 
+                    {{else}}
+                    <title>{{ title ?? site:name }}</title>
+                    {{/if}}
+                    
+                    {{if meta_keywords}}
+                    <meta name = "keywords" content = "{{meta_keywords}}" />
+                    {{/if}}
+                    
+                    {{if meta_description}}
+                    <meta name = "description" content = "Learning about Meta Tags." />
+                    {{/if }}
+                    
+                    {{if other_meta_tags}}
+                    
+                    {{other_meta_tags}}
+                    
+                    <meta {{meta_tag_name}} = "{{meta_tag_value}}" {{meta_tag_value_name}} = "{{meta_tag_value_name_value}}" />
+                    
+                    
+                    {{/other_meta_tags}}
+                    
+                    {{/if}}
+
+                {{if og_title}}
+                <meta property="og:title" content="{{og_title}}" />
+                {{/if}}
+                {{if og_description}}
+                <meta property="og:description" content="{{og_description}}" />
+                {{/if}}
+                {{if og_image}}
+                <meta property="og:image" content="{{site:permalink}}{{og_image}}" />
+                {{/if}}
+          display: Template
+          type: textarea
+          icon: textarea
+          listable: hidden
+          instructions_position: above
+          visibility: visible
